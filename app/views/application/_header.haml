@@ -12,6 +12,10 @@
   %ul.pull-right
     - if signed_in?
       %li
+        .allowance
+          Private Repos
+          %strong 5/5
+      %li
         = link_to account_path, class: "account" do
           - if current_user.email_address.present?
             .avatar(style="background-image: url('#{avatar_url(current_user)}')")
