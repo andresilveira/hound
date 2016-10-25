@@ -8,7 +8,7 @@ class Plan
   TYPES = {
     bulk: "bulk",
     public: "public",
-    private: "private"
+    private: "tier1"
   }
 
   def initialize(repo)

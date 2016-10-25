@@ -25,10 +25,12 @@ describe RepoSubscriber do
           expect(repo.subscription.stripe_subscription_id).
             to eq(stripe_subscription_id)
           expect(repo.subscription_price).to(eq(Plan::PRICES[:private]))
+
+          expect(repo.subscription.stripe_plan_id).to(eq(Subscription::TIER1_ID))
         end
       end
 
-      context "when a subscription exists" do
+      xcontext "when a subscription exists" do
         it "increments the Stripe subscription and updates repo subscription" do
           repo = create(:repo, private: true)
           user = create(

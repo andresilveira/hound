@@ -38,6 +38,7 @@ class RepoSubscriber
     repo.create_subscription!(
       user_id: user.id,
       stripe_subscription_id: payment_gateway_subscription.id,
+      stripe_plan_id: repo.plan_type,
       price: repo.plan_price,
     )
   rescue => error
